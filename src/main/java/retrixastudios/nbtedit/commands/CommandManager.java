@@ -6,6 +6,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
+import retrixastudios.nbtedit.commands.sub.NBTCheck;
 import retrixastudios.nbtedit.commands.sub.NBTSet;
 import retrixastudios.nbtedit.commands.sub.NBTView;
 import retrixastudios.nbtedit.util.ChatUtils;
@@ -21,6 +23,7 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         this.commands = new ArrayList<>();
         commands.add(new NBTView());
         commands.add(new NBTSet());
+        commands.add(new NBTCheck());
     }
 
 
@@ -61,8 +64,14 @@ public class CommandManager implements CommandExecutor, TabCompleter {
         }
 
         if(args.length == 2) {
+            for(Plugin plugin : Bukkit.getPluginManager().getPlugins()) {
+                if(plugin.getName().toLowerCase().startsWith(args[1].toLowerCase())) tabComplete.add(plugin.getName());
+            }
+        }
+
+        if(args.length == 3) {
             for(Player p : Bukkit.getOnlinePlayers()) {
-                if(p.getName().toLowerCase().startsWith(args[1].toLowerCase())) tabComplete.add(p.getName());
+                if(p.getName().toLowerCase().startsWith(args[2].toLowerCase())) tabComplete.add(p.getName());
             }
         }
 

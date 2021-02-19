@@ -19,13 +19,14 @@ public class NBTSet extends SubCommand {
 
     @Override
     public void execute(Player player, String... args) {
-        if(args.length == 4) {
+        if(args.length == 5) {
             try {
-                OfflinePlayer target = Bukkit.getOfflinePlayer(args[1]);
-                String tag = args[2];
-                int value = Integer.parseInt(args[3]);
+                String pluginName = args[1];
+                OfflinePlayer target = Bukkit.getOfflinePlayer(args[2]);
+                String tag = args[3];
+                int value = Integer.parseInt(args[4]);
 
-                target.getPlayer().getPersistentDataContainer().set(new NamespacedKey(NBTEdit.getInstance(), tag), PersistentDataType.INTEGER, value);
+                target.getPlayer().getPersistentDataContainer().set(new NamespacedKey(Bukkit.getPluginManager().getPlugin(pluginName), tag), PersistentDataType.INTEGER, value);
 
                 ChatUtils.tell(player, "Set TAG:"+tag + " to: " + value);
             } catch (Exception e) {

@@ -20,12 +20,13 @@ public class NBTView extends SubCommand {
 
     @Override
     public void execute(Player player, String... args) {
-        if(args.length == 3) {
+        if(args.length == 4) {
             try {
-                OfflinePlayer target = Bukkit.getOfflinePlayer(args[1]);
-                String tag = args[2];
+                String pluginName = args[1];
+                OfflinePlayer target = Bukkit.getOfflinePlayer(args[2]);
+                String tag = args[3];
 
-                int value = target.getPlayer().getPersistentDataContainer().get(new NamespacedKey(NBTEdit.getInstance(), tag), PersistentDataType.INTEGER);
+                int value = target.getPlayer().getPersistentDataContainer().get(new NamespacedKey(Bukkit.getPluginManager().getPlugin(pluginName), tag), PersistentDataType.INTEGER);
 
                 ChatUtils.tell(player, target.getName() + " : " + tag + " -> " + value);
             } catch (Exception e) {
