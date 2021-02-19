@@ -29,10 +29,13 @@ The theory behind this plugin is that for certain events that may require manual
 The following commands allow those with permissions to view and edit NBT player data.
 The commands are all accessible through the command alias "/nbt"
 
-- **/nbtedit set (player) (tag) (value)**
+- **/nbtedit set (plugin) (player) (tag) (value)**
   - Change the value of a tag for the specified player.
-- **/nbtedit view (player) (tag)**
+- **/nbtedit view (plugin) (player) (tag)**
   - View the value of the tag for the specified player.
+- **/nbtedit check (plugin) (player) (tag)**
+  - Check if the specified player has the tag.
+    
 
 ## Permissions
 
