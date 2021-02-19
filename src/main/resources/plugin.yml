@@ -1,0 +1,11 @@
+name: NBTEdit
+version: ${project.version}
+main: retrixastudios.nbtedit.NBTEdit
+api-version: 1.16
+authors: [Retrixa]
+description: Command based NBT editor.
+commands:
+  nbtedit:
+    usage: /<command>
+    aliases: [nbt]
+    description: NBTEdit parent command
