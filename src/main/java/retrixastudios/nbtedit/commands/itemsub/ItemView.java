@@ -25,7 +25,7 @@ public class ItemView extends SubCommand {
 
     @Override
     public String getSyntax() {
-        return "/nbtitem view ([s:i:b:]tag)";
+        return "/nbtitem view (tag)";
     }
 
     @Override

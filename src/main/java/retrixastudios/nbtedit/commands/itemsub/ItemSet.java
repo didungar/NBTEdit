@@ -21,7 +21,7 @@ public class ItemSet extends SubCommand {
 
     @Override
     public String getSyntax() {
-        return "/nbtitem set (tag) ([s:i:b:]value)";
+        return "/nbtitem set (tag) (value)";
     }
 
     @Override

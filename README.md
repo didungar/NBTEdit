@@ -32,11 +32,11 @@ The following command allow those with permissions to view and edit NBT Item dat
 The commands are all acciessible through the command alias " ***/nbt*** "
 
 
-- **/nbtitem set (tag) (value)**
+- **/nbtedit set (tag) (value)**
   - Change the value of a tag for the specified player.
-- **/nbtitem view (tag)**
+- **/nbtedit view (tag)**
   - View the value of the tag for the specified player.
-- **/nbtitem check (tag)**
+- **/nbtedit check (tag)**
   - Check if the specified player has the tag.
   
 **Examples**
