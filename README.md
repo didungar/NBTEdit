@@ -39,7 +39,7 @@ The commands are all accessible through the command alias " ***/nbtp*** "
     
 #### NBT Item Commands
 The following command allow those with permissions to view and edit NBT Item data.
-The commands are all acciessible through the command alias " ***/nbti***"
+The commands are all acciessible through the command alias " ***/nbti*** "
 
 - Arguments:
   - s:  Refers to a value of a String.
@@ -54,7 +54,7 @@ The commands are all acciessible through the command alias " ***/nbti***"
 - **/nbtitem check (tag)**
   - Check if the specified player has the tag.
   
-**Example**
+**Examples**
 ```
 /nbtitem set enabled b:true
 /nbtitem view b:enabled
