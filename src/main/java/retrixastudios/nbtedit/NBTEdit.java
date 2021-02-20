@@ -1,7 +1,8 @@
 package retrixastudios.nbtedit;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import retrixastudios.nbtedit.commands.CommandManager;
+import retrixastudios.nbtedit.commands.ItemCommandManager;
+import retrixastudios.nbtedit.commands.PlayerCommandManager;
 
 public final class NBTEdit extends JavaPlugin {
 
@@ -12,7 +13,8 @@ public final class NBTEdit extends JavaPlugin {
         // Plugin startup logic
         instance = this;
 
-        getCommand("nbtedit").setExecutor(new CommandManager());
+        getCommand("nbtplayer").setExecutor(new PlayerCommandManager());
+        getCommand("nbtitem").setExecutor(new ItemCommandManager());
 
     }
 

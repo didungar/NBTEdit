@@ -5,7 +5,11 @@ api-version: 1.16
 authors: [Retrixa]
 description: Command based NBT editor.
 commands:
-  nbtedit:
+  nbtplayer:
     usage: /<command>
-    aliases: [nbt]
-    description: NBTEdit parent command
+    aliases: [nbtp]
+    description: NBTEdit player parent command.
+  nbtitem:
+    usage: /<command>
+    aliases: [nbti]
+    description: NBTEdit item parent command.

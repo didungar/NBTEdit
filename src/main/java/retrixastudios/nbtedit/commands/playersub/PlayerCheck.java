@@ -1,15 +1,15 @@
-package retrixastudios.nbtedit.commands.sub;
+package retrixastudios.nbtedit.commands.playersub;
 
+import io.github.bananapuncher714.nbteditor.NBTEditor;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.persistence.PersistentDataType;
-import retrixastudios.nbtedit.NBTEdit;
 import retrixastudios.nbtedit.commands.SubCommand;
 import retrixastudios.nbtedit.util.ChatUtils;
 
-public class NBTCheck extends SubCommand {
+public class PlayerCheck extends SubCommand {
     @Override
     public String getName() {
         return "check";

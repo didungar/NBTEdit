@@ -26,16 +26,40 @@ The theory behind this plugin is that for certain events that may require manual
 
 ## Commands
 
-The following commands allow those with permissions to view and edit NBT player data.
-The commands are all accessible through the command alias "/nbt"
+#### NBT Player Commands
+The following commands allow those with permissions to view and edit NBT Player data.
+The commands are all accessible through the command alias " ***/nbtp*** "
 
-- **/nbtedit set (plugin) (player) (tag) (value)**
+- **/nbtplayer set (plugin) (player) (tag) (value)**
   - Change the value of a tag for the specified player.
-- **/nbtedit view (plugin) (player) (tag)**
+- **/nbtplayer view (plugin) (player) (tag)**
   - View the value of the tag for the specified player.
-- **/nbtedit check (plugin) (player) (tag)**
+- **/nbtplayer check (plugin) (player) (tag)**
   - Check if the specified player has the tag.
     
+#### NBT Item Commands
+The following command allow those with permissions to view and edit NBT Item data.
+The commands are all acciessible through the command alias " ***/nbti***"
+
+- Arguments:
+  - s:  Refers to a value of a String.
+  - i:  Refers to a value of an Integer.
+  - b:  Refers to a value of a Boolean.
+  
+
+- **/nbtitem set (tag) ([s:i:b:]value)**
+  - Change the value of a tag for the specified player.
+- **/nbtitem view ([s:i:b:]tag)**
+  - View the value of the tag for the specified player.
+- **/nbtitem check (tag)**
+  - Check if the specified player has the tag.
+  
+**Example**
+```
+/nbtitem set enabled b:true
+/nbtitem view b:enabled
+/nbtitem check enabled
+```
 
 ## Permissions
 
