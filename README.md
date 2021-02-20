@@ -47,9 +47,9 @@ The commands are all acciessible through the command alias " ***/nbti*** "
   - b:  Refers to a value of a Boolean.
   
 
-- **/nbtitem set (tag) ([s:i:b:]value)**
+- **/nbtitem set (tag) ([s: i: b: ]value)**
   - Change the value of a tag for the specified player.
-- **/nbtitem view ([s:i:b:]tag)**
+- **/nbtitem view ([s: i: b: ]tag)**
   - View the value of the tag for the specified player.
 - **/nbtitem check (tag)**
   - Check if the specified player has the tag.
