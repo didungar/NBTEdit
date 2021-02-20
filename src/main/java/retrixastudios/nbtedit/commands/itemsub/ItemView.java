@@ -45,7 +45,7 @@ public class ItemView extends SubCommand {
 
         try {
             String tag = args[1];
-            Object value = null;
+            Object value;
 
             if(NBTEditor.contains(item, tag)) {
 
@@ -55,7 +55,7 @@ public class ItemView extends SubCommand {
 
                 if(sVal != null) {
                     value = sVal;
-                } else if(iVal == 0 && bVal) {
+                } else if(iVal == 0) {
                     value = bVal;
                 } else {
                     value = iVal;
