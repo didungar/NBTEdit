@@ -39,7 +39,7 @@ public class PlayerView extends SubCommand {
 
     @Override
     public String getSyntax() {
-        return "/nbtedit view (player) (tag)";
+        return "/nbtplayer view (plugin) (player) (tag)";
     }
 
     @Override

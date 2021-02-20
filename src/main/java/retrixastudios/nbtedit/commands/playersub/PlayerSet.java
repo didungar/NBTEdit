@@ -44,7 +44,7 @@ public class PlayerSet extends SubCommand {
 
     @Override
     public String getSyntax() {
-        return "/nbtedit set (player) (tag) (value)";
+        return "/nbtplayer set (plugin) (player) (tag) (value)";
     }
 
     @Override

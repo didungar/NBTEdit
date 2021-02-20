@@ -22,7 +22,7 @@ public class PlayerCheck extends SubCommand {
 
     @Override
     public String getSyntax() {
-        return "/nbtedit check (player) (tag)";
+        return "/nbtplayer check (plugin) (player) (tag)";
     }
 
     @Override
