@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import retrixastudios.nbtedit.commands.SubCommand;
 import retrixastudios.nbtedit.util.ChatUtils;
+import retrixastudios.nbtedit.util.DataFinder;
 
 public class ItemSet extends SubCommand {
     @Override
@@ -40,40 +41,10 @@ public class ItemSet extends SubCommand {
         try {
             String tag = args[1];
             String valText = args[2];
-            String dataType = valText.split(":")[0];
 
-            switch (dataType) {
-
-                case "s": {
-                    String value = valText.split(":")[1];
-                    player.getInventory().setItemInMainHand(NBTEditor.set(item, value, tag));
-                    ChatUtils.tell(player, "Set Item Tag &a" + tag + "&f to: &a" + value);
-                    return;
-                }
-
-                case "b": {
-                    boolean value = Boolean.parseBoolean(valText.split(":")[1]);
-                    ChatUtils.tell(player, "BOOL: " + value + " -- " + valText.split(":")[1]);
-                    player.getInventory().setItemInMainHand(NBTEditor.set(item, value, tag));
-                    ChatUtils.tell(player, "Set Item Tag &a" + tag + "&f to: &a" + value);
-                    return;
-                }
-
-                case "i": {
-                    int value = Integer.parseInt(valText.split(":")[1]);
-                    ChatUtils.tell(player, "INT: " + value + " -- " + valText.split(":")[1]);
-                    player.getInventory().setItemInMainHand(NBTEditor.set(item, value, tag));
-                    ChatUtils.tell(player, "Set Item Tag &a" + tag + "&f to: &a" + value);
-                    return;
-                }
-
-                default: {
-                    ChatUtils.tell(player, "No data type provided, please use correct Syntax.");
-                    ChatUtils.tell(player, getSyntax());
-                    break;
-                }
-
-            }
+            Object type = DataFinder.getType(valText);
+            player.getInventory().setItemInMainHand(NBTEditor.set(item, type, tag));
+            ChatUtils.tell(player, "Set '&a" + tag + "&f' to '&a" + type + "&f'.");
 
         } catch (IndexOutOfBoundsException indexException) {
             ChatUtils.tell(player, "Please use correct Syntax.");

@@ -1,11 +1,16 @@
 package retrixastudios.nbtedit.commands.itemsub;
 
 import io.github.bananapuncher714.nbteditor.NBTEditor;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import retrixastudios.nbtedit.NBTEdit;
 import retrixastudios.nbtedit.commands.SubCommand;
 import retrixastudios.nbtedit.util.ChatUtils;
+import retrixastudios.nbtedit.util.DataFinder;
+
+import java.nio.charset.StandardCharsets;
 
 public class ItemView extends SubCommand {
     @Override
@@ -39,32 +44,24 @@ public class ItemView extends SubCommand {
         }
 
         try {
-            String tag = args[1].split(":")[1];
-            String type = args[1].split(":")[0];
+            String tag = args[1];
+            Object value = null;
 
             if(NBTEditor.contains(item, tag)) {
 
-                switch (type) {
-                    case "s": {
-                        ChatUtils.tell(player, "The String value of '" + tag + "' is &a" + NBTEditor.getString(item, tag));
-                        return;
-                    }
+                String sVal = NBTEditor.getString(item, tag);
+                int iVal = NBTEditor.getInt(item, tag);
+                boolean bVal = NBTEditor.getBoolean(item, tag);
 
-                    case "i": {
-                        ChatUtils.tell(player, "The Integer value of '" + tag + "' is &a" + NBTEditor.getInt(item, tag));
-                        return;
-                    }
-
-                    case "b": {
-                        ChatUtils.tell(player, "The Boolean value of '" + tag + "' is &a" + NBTEditor.getBoolean(item, tag));
-                        return;
-                    }
-
-                    default: {
-                        ChatUtils.tell(player, "Please use correct Syntax.");
-                        ChatUtils.tell(player, getSyntax());
-                    }
+                if(sVal != null) {
+                    value = sVal;
+                } else if(iVal == 0 && bVal) {
+                    value = bVal;
+                } else {
+                    value = iVal;
                 }
+
+                ChatUtils.tell(player, "The value of '&a" + tag + "&f' is '&a" + value + "&f'.");
             } else {
                 ChatUtils.tell(player, "The item doesn't contain tag: &c" + tag);
             }

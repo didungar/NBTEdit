@@ -1,5 +1,6 @@
 package retrixastudios.nbtedit.commands;
 
+import io.github.bananapuncher714.nbteditor.NBTEditor;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -74,6 +75,12 @@ public class PlayerCommandManager implements CommandExecutor, TabCompleter {
         if(args.length == 3) {
             for(Player p : Bukkit.getOnlinePlayers()) {
                 if(p.getName().toLowerCase().startsWith(args[2].toLowerCase())) tabComplete.add(p.getName());
+            }
+        }
+
+        if(args.length == 4) {
+            for(String key : NBTEditor.getKeys(sender)) {
+                if(key.toLowerCase().startsWith(args[3].toLowerCase())) tabComplete.add(key);
             }
         }
 
