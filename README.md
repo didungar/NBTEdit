@@ -29,7 +29,7 @@ The theory behind this plugin is that for certain events that may require manual
     
 #### NBT Item Commands
 The following command allow those with permissions to view and edit NBT Item data.
-The commands are all acciessible through the command alias " ***/nbt*** "
+The commands are all accessible through the command alias " ***/nbt*** "
 
 
 - **/nbtedit set (tag) (value)**
