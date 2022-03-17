@@ -59,11 +59,7 @@ There is only a single permission required to operate NBTEdit as it is intended 
 
 Useful links for this plugin!
 
-You can find all the releases for this plugin [Here](https://github.com/Retrixa/NBTEdit/releases)
-
-If you find this plugin a useful addition to your server, consider [buying a coffee](https://www.buymeacoffee.com/retrixa) for the developers!
-
-You can find support for this plugin at our Official Discord [Here](https://discord.com/invite/KNFD3KdfEA)
+You can find all the releases for this plugin [Here](https://github.com/TaylorBrennan/NBTEdit/releases)
 
 Thank you!
 
