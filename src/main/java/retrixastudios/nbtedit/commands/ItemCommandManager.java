@@ -1,14 +1,12 @@
 package retrixastudios.nbtedit.commands;
 
 import io.github.bananapuncher714.nbteditor.NBTEditor;
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
-import retrixastudios.nbtedit.NBTEdit;
+import org.bukkit.inventory.ItemStack;
 import retrixastudios.nbtedit.commands.itemsub.ItemCheck;
 import retrixastudios.nbtedit.commands.itemsub.ItemSet;
 import retrixastudios.nbtedit.commands.itemsub.ItemView;
@@ -58,6 +56,11 @@ public class ItemCommandManager implements CommandExecutor, TabCompleter {
 
         List<String> tabComplete = new ArrayList<>();
 
+        if(! (sender instanceof Player)) {
+            System.err.println("[NBTEdit] You must send command by player, don't use console.");
+            tabComplete.add("NoTabCompleteForConsole");
+            return tabComplete;
+        }
 
         if(args.length == 1) {
             for(SubCommand cmds : commands) {
@@ -66,7 +69,12 @@ public class ItemCommandManager implements CommandExecutor, TabCompleter {
         }
 
         if(args.length == 2) {
-            for(String key : NBTEditor.getKeys(((Player) sender).getInventory().getItemInMainHand())) {
+            ItemStack item = ((Player) sender).getInventory().getItemInMainHand();
+            if(null==item) {
+                tabComplete.add("ItemRequired");
+                return tabComplete;
+            }
+            for(String key : NBTEditor.getKeys(item)) {
                 if(key.toLowerCase().startsWith(args[1].toLowerCase())) tabComplete.add(key);
             }
         }
